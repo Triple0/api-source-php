@@ -3,14 +3,16 @@
 ?><?php
   // Submit a request to the API endpoint.
   $covid19DataJSONString = file_get_contents( 'https://api.covid19api.com/summary' );
+
   // Convert the response to a PHP object.
   $covid19DataObject = json_decode( $covid19DataJSONString );
-  // Collect the Global Data into a variable.
 
+  // Collect the Global Data into a variable.
   $covid19DataSummary = $covid19DataObject->Global;
 
   // Collect the Countries Data into an array.
   $covid19Data = $covid19DataObject->Countries;
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +25,7 @@
   <?php include './includes/navigation.php'; ?>
   <h2>COVID-19 Data Summary</h2>
   <!-- Displaying the global data  -->
+  
   <h3>Global Summary</h3>
   
   <ul>     
